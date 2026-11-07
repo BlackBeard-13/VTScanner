@@ -113,7 +113,7 @@ def file_option (max_tries=3):
 #Used ifthe user picks the URL option in main program
 def url_option(max_tries=3):
     the_url = ""
-    #Obtain the URL and enter routine to check its validity
+    #Obtain the URL
     for url_attempt in range(1, max_tries +1):
         the_url = input("Enter URL: ").strip(' "')
         if the_url:
@@ -123,16 +123,9 @@ def url_option(max_tries=3):
             print("Exiting Program...")
             return None
 
-        # add http if missing
+    # add http if missing
     if the_url and not the_url.startswith(('http://', 'https://')):
         the_url = 'https://' + the_url
-        #makes sure we can connect to the site
-    try:
-            test = requests.get(the_url, timeout=10)
-            test.raise_for_status()
-    except requests.exceptions.RequestException as error:
-        print(f"Issue accessing site! unreachable or returned an error: {type(error).__name__}")
-        return None
     
     #construct API call
     url = "https://www.virustotal.com/api/v3/urls"
