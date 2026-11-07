@@ -1,0 +1,29 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Secrets (never commit your VirusTotal API key)
+.env
+*.env
+.envrc
+
+# Scan output (local data, not source code)
+results.json
+results.txt
+
+# Packaging and build artifacts
+build/
+dist/
+*.egg-info/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
